@@ -49,7 +49,7 @@ export default function CountryDetail(){
 
         return (
             <>
-            <div className="flex justify-center items-start min-h-screen dark:bg-very-dark-blue dark:text-white    pt-[100px] ">
+            <div className="flex justify-center items-start min-h-screen dark:bg-very-dark-blue bg-very-light-gray dark:text-white    pt-[100px] ">
                 <Container>
                     <div className="mb-11 px-5">
                         <Link to='/' className="flex items-center justify-center gap-2 rounded-lg py-2 dark:bg-dark-blue shadow-lg  lg:w-[150px] lg:text-[30px] w-[100px] text-[20px]"><span><MdKeyboardBackspace /></span><span>Back</span></Link>
