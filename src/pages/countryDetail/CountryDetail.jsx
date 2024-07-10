@@ -17,7 +17,7 @@ export default function CountryDetail(){
 
     
     useEffect(() =>{
-      
+        
         setLoading(true);
         axios.get(`https://restcountries.com/v3.1/alpha/${CountryCode}`)
         .then((response) => {
@@ -41,7 +41,7 @@ export default function CountryDetail(){
             alert(error.message)
         })
         
-    },[])
+    },[CountryCode])
     
    
 
@@ -81,7 +81,7 @@ export default function CountryDetail(){
                                 <div className="flex gap-3 flex-wrap p-2 lg:justify-center">
                                     {
                                         country && country.borders ? country.borders.map((border,index) =>{
-                                            return <a key={index} href = {`/country/${border}`} className="dark:bg-dark-blue p-2 shadow-lg flex items-center justify-center rounded-lg">{border}</a>
+                                            return <Link key={index} to = {`/country/${border}`} className="dark:bg-dark-blue p-2 shadow-lg flex items-center justify-center rounded-lg">{border}</Link>
                                         }):<p className="text-[20px]">No Borders</p>
                                     }
                                     
@@ -98,7 +98,7 @@ export default function CountryDetail(){
     }
     else{
         return (<>
-       <div className="   min-h-[600px] grid place-items-center text-[150px] text-very-dark-blue"><LuLoader className="animate-spin" /></div></>)
+       <div className=" dark:bg-very-dark-blue  min-h-screen grid place-items-center text-[150px] text-very-dark-blue"><LuLoader className="animate-spin dark:text-white" /></div></>)
     }
 
     
